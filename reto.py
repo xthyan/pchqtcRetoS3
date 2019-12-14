@@ -29,6 +29,18 @@
 
 #Ejercicio 02: Crea una lista con los meses del año, pide números al usuario, si el numero esta entre 1 y la longitud máxima de la lista, muestra el contenido de esa posición sino muestra un mensaje de error.
 
-mesesAnho = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre','Diciembre']
-numeroMes = int(input("Ingresa del 1 al 12 para identificar el mes: "))
-print(mesesAnho[numeroMes-1])
+meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'] # Declaramos la lista con los meses del año
+bandera = True # Declaramos la bandera en True, para siempre ejecutar el while
+
+while bandera == True: # Mientras la bandera sea True, se ejecutara el while.
+    numeroMes = int(input('Ingrese el numero de un mes: ')) # Solicitamos el ingreso de un numero y convertirmos el dato en entero
+
+    if numeroMes > 12: # Validamos que el numero se encuentre dentro del rango del 1 a 12
+        print('ERROR..!') # En caso se mayor que 12, saldra un Error
+    else:
+        if numeroMes == 0: # Regla de Negocio: Si ingresas el valor cero, se termina el programa
+            bandera = False
+            print(meses)
+        else:
+            index = numeroMes - 1 # Al numero ingesado por el usuario le restamos uno para que coincida con el indice verdadero del mes.
+            print(meses[index])
